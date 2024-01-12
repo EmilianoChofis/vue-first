@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div id="app" style="height: 100vh;">
+  <div id="app" style="height: 100vh; background-color: aqua;">
 
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info" fixed="bottom" sticky="true">
