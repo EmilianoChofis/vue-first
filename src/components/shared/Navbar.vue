@@ -50,33 +50,33 @@
         </b-collapse>
       </b-navbar>
     </div>
-    <router-view></router-view>
-  </div>
-  
+    <!-- <div> -->
+      <!-- <b-sidebar id="sidebar-right" title="Sidebar" right shadow visible="True" no-close-on-route-change style="z-index: -1;">
+        <div class="px-3 py-2"></div>
+      </b-sidebar> -->
+      <!-- <b-nav-item>
+        <b-link href="/"> Inicio </b-link>
+      </b-nav-item>
+      <b-nav-item>
+        <b-link href="/nosotros"> Electronicos </b-link>
+      </b-nav-item>
+      <b-nav-item>
+        <b-link :to="{ name: 'videojuegos' }"> Videojuegos </b-link>
+      </b-nav-item>
+    </div> -->
+
+    <!-- <b-nav vertical class="pt-5">
+      
+    </b-nav> -->
+    </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      items: [
-        {
-          text: "Inicio",
-          href: "#/inicio",
-        },
-        // {
-        //   text: 'Nosotros',
-        //   href: '#/nosotros'
-        // },
-        // {
-        //   text: 'Cliente',
-        //   active: true
-        // }
-      ],
-    };
-  },
-};
+
+}
 </script>
 
 <style>
+
 </style>

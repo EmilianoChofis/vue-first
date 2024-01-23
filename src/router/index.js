@@ -6,10 +6,6 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: "/",
-        redirect: "/inicio"
-    },
-    {
-        path: "/",
         component: {
             render(c){
                 return c('router-view')
@@ -30,6 +26,15 @@ const routes = [
                 path:'/clientes',
                 name: '/clientes',
                 component :()=> import ('../components/clientes.vue')
+            },
+            {
+                path:'/formulario',
+                name: '/formulario',
+                component :()=> import ('../components/Formulario.vue')
+            },
+            {
+                path:'*',
+                component :()=> import ('../views/ErrorPages/Error404.vue')
             },
             
             
