@@ -246,8 +246,9 @@ export default {
 
          if (!this.form.foto) {
            this.errors.push("La imagen es obligatoria.");
-         }else if(this.checkSize(this.form.foto)){
-           this.errors.push("La imagen debe ser menor a 500kb.");
+         }else if(!this.checkSize(this.form.foto)){
+          console.log(this.form.foto.size);
+           this.errors.push("La imagen debe ser menor a 3mb.");
          }
      
       e.preventDefault();
@@ -261,7 +262,7 @@ export default {
       return typeof value === "string" || value instanceof String;
     },
     checkSize(value) {
-      return value.size <= 0.000488;
+      return value.size <= 3000000;
     },
 
     },
