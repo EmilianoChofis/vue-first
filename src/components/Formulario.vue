@@ -130,13 +130,11 @@
           label="Your foto:"
           label-for="foto"
       >
-        <b-form-input
+        <b-form-file
             id="foto"
             v-model="form.foto"
-            placeholder="Enter foto"
-            type="file"
             accept="image/*"
-        ></b-form-input>
+        ></b-form-file>
       </b-form-group>
 
       <b-button type="submit" variant="primary">Submit</b-button>
@@ -166,7 +164,7 @@ export default {
         },
         fec_nac: "",
         tel: "",
-        foto: "",
+        foto: null,
       },
     };
   },
@@ -246,9 +244,11 @@ export default {
           this.errors.push("El correo electrónico debe ser válido.");
         }
 
-      //   if (!this.foto) {
-      //     this.errors.push("La imagen es obligatoria.");
-      //   }
+         if (!this.form.foto) {
+           this.errors.push("La imagen es obligatoria.");
+         }else if(this.checkSize(this.form.foto)){
+           this.errors.push("La imagen debe ser menor a 500kb.");
+         }
      
       e.preventDefault();
     },
@@ -260,7 +260,11 @@ export default {
     checkIsString(value) {
       return typeof value === "string" || value instanceof String;
     },
-  },
+    checkSize(value) {
+      return value.size <= 0.000488;
+    },
+
+    },
 };
 </script>
 
